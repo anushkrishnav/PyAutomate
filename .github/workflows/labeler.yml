@@ -1,0 +1,14 @@
+name: Issues Labeler
+on:
+  issues:
+    types: [opened, edited]
+jobs:
+  labeler:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: github/issue-labeler@v2.0
+        with:
+          repo-token: "${{ secrets.GT }}"
+          Hacktoberfest: >
+            Open for Quality Pull Request Make sure you follow the python coding conventions
+          enable-versioned-regex: 0
