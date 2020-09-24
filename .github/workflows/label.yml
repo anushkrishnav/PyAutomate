@@ -9,11 +9,12 @@ name: Labeler
 on: [pull_request,issues]
 
 jobs:
-  label:
+  label: 
 
     runs-on: ubuntu-latest
-
+    
     steps:
     - uses: actions/labeler@v2
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
+        Good Work: > "Check your Code quality Amamzing work Thank you"
