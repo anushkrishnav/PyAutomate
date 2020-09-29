@@ -7,7 +7,7 @@ from time import sleep
 def loadText():
     """[loads the text from 'message.txt' file]
     """
-    with open('message.txt', 'r') as text_file:
+    with open('whatsapp-bot/message.txt', 'r') as text_file:
         message = text_file.read().replace('\n', ' ')
     return message
 
@@ -15,7 +15,7 @@ def loadText():
 def loadContacts():
     """[gets a list of phone numbers from 'phoneNo.csv' file]
     """
-    data = read_csv('phoneNo.csv')
+    data = read_csv('whatsapp-bot/phoneNo.csv')
     userNums = []
     for number in data['Phone No.']:
         userNums.append(str(number))
