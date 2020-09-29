@@ -12,7 +12,7 @@
 
   > Write your credentials in username.txt and password.txt file respectively.
 
-* ### Set Recipients for your message
+* ### Add usernames of people to follow/unfollow
 
   > Write all the usernames of the people you want to follow/unfollow under Username column of 'people.csv' file
 
