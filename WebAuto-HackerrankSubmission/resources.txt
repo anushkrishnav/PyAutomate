@@ -1,0 +1,11 @@
+1) Install Selenium
+- on your command line interface type pip3 install selenium
+
+2) Download selenium web driver for your browser
+- Go to the link https://sites.google.com/a/chromium.org/chromedriver/downloads and on Drivers section of the webpage click on the link for what browser you want the driver for. The driver allows our code to actually create and control a browser window.
+
+3) Learn browser automation using Selenium - https://www.geeksforgeeks.org/browser-automation-using-selenium/
+
+4) Learn selenium library in python - https://www.geeksforgeeks.org/selenium-python-basics/
+
+5) web scraping using Selenium - https://www.geeksforgeeks.org/scraping-covid-19-statistics-using-python-and-selenium/
