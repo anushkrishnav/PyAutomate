@@ -19,4 +19,4 @@ documentation:
 No-Code:
   - "(No Code)"
 Hactoberfest:
-  - "*"
+  - ".*"
