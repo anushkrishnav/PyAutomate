@@ -2,8 +2,13 @@ name: Flake8
 
 on:
   push:
+    branches:
+      - master
     paths:
       - '*.py'
+  pull_request:
+    paths:
+      - '*.py
 
 jobs:
   flake8_py3:
