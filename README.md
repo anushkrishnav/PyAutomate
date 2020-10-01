@@ -1,5 +1,5 @@
 # PyAutomate
-
+![](https://github.com/anushkrishnav/PyAutomate/blob/master/lch.png)
 ## Overview
 Welcome to Py Kitchen Lets see what cool dishes we can cook up .
 Want to contribute just code up a cool python script and issue a PR .
