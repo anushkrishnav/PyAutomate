@@ -1,8 +1,8 @@
 # github: rkgeekoftheweek
 
 # install required packages
-import pyttsx3
 import PyPDF2
+import pyttsx3
 
 
 def read_book(bookName):
