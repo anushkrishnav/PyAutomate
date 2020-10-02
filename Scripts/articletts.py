@@ -18,7 +18,9 @@ while another_article != "n":
     p_tags = soup.find_all("p")
     p_text = [tag.get_text().strip() for tag in p_tags]
     sentence_list = [sentence for sentence in p_text if not "\n" in sentence]
-    sentence_list_final = [sentence for sentence in sentence_list if "." in sentence]
+    sentence_list_final = [
+        sentence for sentence in sentence_list if "." in sentence
+    ]
 
     article_text = " ".join(sentence_list_final)
 
