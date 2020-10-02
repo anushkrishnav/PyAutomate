@@ -3,7 +3,8 @@ import json
 import requests
 import settings
 import simplejson
-from flask import Flask, request
+from flask import Flask
+from flask import request
 
 
 def send_message(json: str) -> None:
