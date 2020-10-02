@@ -1,8 +1,9 @@
-import requests
 from os import system
-from gtts import gTTS
-from bs4 import BeautifulSoup
 from time import sleep
+
+import requests
+from bs4 import BeautifulSoup
+from gtts import gTTS
 from playsound import playsound
 
 another_article = ""
