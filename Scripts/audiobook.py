@@ -11,7 +11,7 @@ def read_book(bookName):
     return pdfReader
 
 
-def listen_book(reader,pageNumber):
+def listen_book(reader, pageNumber):
     speaker = pyttsx3.init()
     page = reader.getPage(pageNumber)
     text = page.extractText()
@@ -26,5 +26,7 @@ if __name__ == "__main__":
     pageNumber = 7
     
     reader = read_book(bookName)
-    listen_book(reader,pageNumber)
+    listen_book(reader, pageNumber)
     
+
+
