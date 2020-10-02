@@ -45,7 +45,7 @@ class YahooFinance:
         return self._result
 
     def _parsing_json(self, data):
-        
+
         timestamps = data['chart']['result'][0]['timestamp']
         # Formatting date from epoch to local time
         timestamps = [_time.strftime('%a, %d %b %Y %H:%M:%S', _time.localtime(x)) for x in timestamps]
