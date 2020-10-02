@@ -1,6 +1,6 @@
 # github: rkgeekoftheweek
 
-#install required packages
+# install required packages
 import pyttsx3
 import PyPDF2
 
@@ -21,12 +21,9 @@ def listen_book(reader, pageNumber):
 
 if __name__ == "__main__":
 
-    #change bookname and page number here
-    bookName ="alchemist.pdf"
+    # change bookname and page number here
+    bookName = "alchemist.pdf"
     pageNumber = 7
-    
+
     reader = read_book(bookName)
     listen_book(reader, pageNumber)
-    
-
-
