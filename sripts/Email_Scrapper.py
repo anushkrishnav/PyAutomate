@@ -1,9 +1,10 @@
 import re
-import requests
-from urllib.parse import urlsplit
 from collections import deque
-from bs4 import BeautifulSoup
+from urllib.parse import urlsplit
+
 import pandas as pd
+import requests
+from bs4 import BeautifulSoup
 from google.colab import files
 
 original_url = input("Enter the website url: ")
