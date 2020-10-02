@@ -25,6 +25,6 @@ if __name__ == "__main__":
     bookName ="alchemist.pdf"
     pageNumber = 7
     
-   reader = read_book(bookName)
-   listen_book(reader,pageNumber)
+    reader = read_book(bookName)
+    listen_book(reader,pageNumber)
     
