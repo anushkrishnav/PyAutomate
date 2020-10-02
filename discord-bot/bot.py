@@ -15,29 +15,31 @@ def send_message(json: str) -> None:
     )
 
 
-def generate_base_embed(
-    avatar_url: str, username: str, color: str, title: str, url: str
-):
+def generate_base_embed(avatar_url: str, username: str, color: str, title: str,
+                        url: str):
     embed = {
         "avatar_url": avatar_url,
         "username": username,
-        "embeds": [{"title": title, "url": url, "color": color, "footer": {}}],
+        "embeds": [{
+            "title": title,
+            "url": url,
+            "color": color,
+            "footer": {}
+        }],
     }
     return embed
 
 
 def send_issue(avatar_url: str, username: str, title: str, url: str) -> None:
-    embed = generate_base_embed(
-        avatar_url, username, settings.ISSUE_MESSAGE_COLOR, title, url
-    )
+    embed = generate_base_embed(avatar_url, username,
+                                settings.ISSUE_MESSAGE_COLOR, title, url)
     embed["embeds"][0]["footer"]["text"] = "New Issue!"
     send_message(json.dumps(embed))
 
 
 def send_pr(avatar_url: str, username: str, title: str, url: str) -> None:
-    embed = generate_base_embed(
-        avatar_url, username, settings.PR_MESSAGE_COLOR, title, url
-    )
+    embed = generate_base_embed(avatar_url, username,
+                                settings.PR_MESSAGE_COLOR, title, url)
     embed["embeds"][0]["footer"]["text"] = "New Pull Request!"
     send_message(json.dumps(embed))
 
