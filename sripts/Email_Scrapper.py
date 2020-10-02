@@ -23,19 +23,20 @@ while len(unscraped):
 
     base_url = "{0.scheme}://{0.netloc}".format(parts)
     if "/" in parts.path:
-        path = url[: url.rfind("/") + 1]
+        path = url[:url.rfind("/") + 1]
     else:
         path = url
 
     print("Crawling URL %s" % url)
     try:
         response = requests.get(url)
-    except (requests.exceptions.MissingSchema, requests.exceptions.ConnectionError):
+    except (requests.exceptions.MissingSchema,
+            requests.exceptions.ConnectionError):
         continue
 
     new_emails = set(
-        re.findall(r"[a-z0-9\.\-+_]+@[a-z0-9\.\-+_]+\.com", response.text, re.I)
-    )
+        re.findall(r"[a-z0-9\.\-+_]+@[a-z0-9\.\-+_]+\.com", response.text,
+                   re.I))
     emails.update(new_emails)
 
     soup = BeautifulSoup(response.text, "lxml")
