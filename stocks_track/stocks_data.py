@@ -1,8 +1,6 @@
-from nsepy import get_history
 from datetime import date
-from datetime import date
-from nsepy import get_history
 
+from nsepy import get_history
 
 # get data of sbin stock
 
