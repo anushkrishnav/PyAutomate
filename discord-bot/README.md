@@ -21,5 +21,5 @@ with avatar and username of PR/Issue creator.
 
 ## How it looks like?
 
-Like this:  
+Like this:
 ![BotIssuePRImage](bot.jpg)
