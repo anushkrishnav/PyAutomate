@@ -1,4 +1,4 @@
-mport re
+import re
 import requests
 from urllib.parse import urlsplit
 from collections import deque
