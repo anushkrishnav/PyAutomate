@@ -6,7 +6,7 @@ import PyPDF2
 
 
 def read_book(bookName):
-    pdfBook = open(bookName, 'rb')
+    pdfBook = open(bookName, "rb")
     pdfReader = PyPDF2.PdfFileReader(pdfBook)
     return pdfReader
 
