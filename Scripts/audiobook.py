@@ -1,5 +1,4 @@
 # github: rkgeekoftheweek
-
 # install required packages
 import PyPDF2
 import pyttsx3
