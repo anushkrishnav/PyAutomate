@@ -1,8 +1,9 @@
-from flask import Flask, request
-import simplejson
-import requests
 import json
+
+import requests
 import settings
+import simplejson
+from flask import Flask, request
 
 
 def send_message(json: str) -> None:
