@@ -7,9 +7,9 @@ import speech_recognition as sr
 import smtplib
 from difflib import SequenceMatcher
 
-engine = pyttsx3.init('sapi5')
-voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[1].id)
+engine = pyttsx3.init("sapi5")
+voices = engine.getProperty("voices")
+engine.setProperty("voice", voices[1].id)
 
 
 def speak(audio):
@@ -26,7 +26,7 @@ def takeCommand():
         audio = r.listen(source)
     try:
         print("accessing...")
-        query = r.recognize_google(audio, language='en-in')
+        query = r.recognize_google(audio, language="en-in")
         print(f"User said: {query}\n")
     except Exception as e:
         # print(e)
