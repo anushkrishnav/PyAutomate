@@ -82,8 +82,6 @@ while profiles_to_visit:
         full_link = 'https://www.linkedin.com' + profile_to_visit
         browser.get(full_link)
 
-
-
         browser.find_element_by_class_name('pv-s-profile-actions').click()
 
         browser.find_element_by_xpath(
