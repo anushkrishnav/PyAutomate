@@ -2,10 +2,11 @@
 
 # importing the required libraries
 
-import pyttsx3
-import speech_recognition as sr
 import smtplib
 from difflib import SequenceMatcher
+
+import pyttsx3
+import speech_recognition as sr
 
 engine = pyttsx3.init("sapi5")
 voices = engine.getProperty("voices")
