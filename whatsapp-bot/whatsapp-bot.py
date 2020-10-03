@@ -5,6 +5,7 @@ from time import sleep
 
 from Voice_control_Module.py import *
 
+
 def loadText():
     """[loads the text from 'message.txt' file]
     """
