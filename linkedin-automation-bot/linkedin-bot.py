@@ -46,12 +46,12 @@ def getProfilesToVisit(soup, profiles_to_visit):
     profileIDS = []
     people_also_viewed = soup.find("div", {"class": "pv-browsemap-section"})
     all_links = people_also_viewed.findAll(
-        "a", {"class": "pv-browsemap-section__member ember-view"}
-    )
+        "a", {"class": "pv-browsemap-section__member ember-view"})
 
     for link in all_links:
         userID = link.get("href")
-        if (userID not in profiles_to_visit) and userID not in profiles_visited:
+        if (userID not in profiles_to_visit
+            ) and userID not in profiles_visited:
             profileIDS.append(userID)
     return profileIDS
 
@@ -71,8 +71,7 @@ def getUserName(soup):
 
 # passing links to profiles_to_visit
 profiles_to_visit = getProfilesToVisit(
-    BeautifulSoup(browser.page_source, "lxml"), profiles_to_visit
-)
+    BeautifulSoup(browser.page_source, "lxml"), profiles_to_visit)
 
 # initializing the count of profiles visited
 profile_visited_count = 0
@@ -91,12 +90,12 @@ while profiles_to_visit:
             "//button[@class='mr1 artdeco-button artdeco-button--muted artdeco-button--3 artdeco-button--secondary ember-view']"
         ).click()
 
-        connection_name = getUserName(BeautifulSoup(browser.page_source, "lxml"))
+        connection_name = getUserName(
+            BeautifulSoup(browser.page_source, "lxml"))
 
         custom_message = (
-            "Hey! "
-            + connection_name
-            + ", I see we have mutual interest and I would be really happy to connect with you. So it would be great if you accept my connection. Thanks!!"
+            "Hey! " + connection_name +
+            ", I see we have mutual interest and I would be really happy to connect with you. So it would be great if you accept my connection. Thanks!!"
         )
 
         elementID = browser.find_element_by_id("custom-message")
