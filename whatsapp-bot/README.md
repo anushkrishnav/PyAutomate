@@ -6,16 +6,18 @@
 
 * To schedule your message
 
+* Voice Controled Bot
+
 ## How to use
 
-* ### Set a message
+* ### Set a message 
 
-  > Write your message in message.txt file
+  > Write your message in message.txt file or after activation say the bot to draft your message
 
 * ### Set Recipients for your message
 
   > Write all the phone numbers of the recipients (with country code under Phone No. column of 'phoneNo.csv' file. Dont use '+' symbol in phone number
-
+  > You could also speak up the recipients name and ask the bot to sedule the task by your voice 
 * ### Install requirements
 
   > pip install -r requirements.txt
