@@ -1,8 +1,9 @@
 # importing necessary libraries
 import random
 import time
-from selenium import webdriver
+
 from bs4 import BeautifulSoup
+from selenium import webdriver
 
 # creating browser window
 browser = webdriver.Chrome("driver/chromedriver.exe")
