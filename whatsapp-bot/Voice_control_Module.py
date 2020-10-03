@@ -1,7 +1,5 @@
 # required stuff for voice control
-
 # importing the required libraries
-
 import smtplib
 from difflib import SequenceMatcher
 
