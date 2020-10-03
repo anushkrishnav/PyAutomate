@@ -3,6 +3,7 @@ from pandas import read_csv
 from datetime import datetime
 from time import sleep
 
+from Voice_control_Module.py import *
 
 def loadText():
     """[loads the text from 'message.txt' file]
@@ -43,11 +44,21 @@ def sendMessage(userNums, message):
 def scheduler():
     """[Schedule the message]
     """
-    year = int(input('Enter a year:'))
-    month = int(input('Enter a month:'))
-    day = int(input('Enter a day:'))
-    hour = int(input('Enter hours:'))
-    minute = int(input('Enter a minutes:'))
+    speak('say year')
+    year = takecommand()
+
+    speak('say month')
+    month = takecommand()
+
+    speak('say day')
+    day = takecommand()
+
+    speak('say hours')
+    hours = takecommand()
+
+    speak('say minute')
+    minute = takecommand()
+
     scheduleDateTime = datetime(year, month, day, hour, minute)
     timeDiff = (scheduleDateTime-datetime.now())
     sleep(timeDiff.total_seconds())
@@ -60,7 +71,9 @@ xpaths = {
 }
 
 if __name__ == "__main__":
-    response = input('Schedule the message ? [y/n]')
+    speak('Schedule the message ? say y or n')
+    response = takecommand()
+    resopnd.upper()
     if response.upper() == 'Y':
         scheduler()
     # Initialize Drivers
@@ -70,8 +83,12 @@ if __name__ == "__main__":
     # Authenticate Login within 15 seconds
     print('Scan the QR code to authenticate')
     sleep(15)
-    userNums = loadContacts()
-    message = loadText()
+    speak('say user name')
+    userNums = takecommand()
+
+    speak('say message')
+    message = takecommand()
+
     sendMessage(userNums, message)
     driver.close()
     pass
