@@ -1,0 +1,3 @@
+your_email
+your_password
+your_linkdin_profile_id: for ex: /in/yash-sharma-371a22148/
