@@ -13,7 +13,7 @@ This bot plays music and post memes to a discord channel
 4. Add the bot to your Discord server
 5. Genrate the token of your bot and replace it in SongBird.py file
 6. Run the Python file to make your bot online
-7. Have fun with it !
+7. Its prefix is {-} i.e 'dash', try calling -h or -help to get all the commands available yet.
 
 ## How it's made?
 
