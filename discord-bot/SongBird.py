@@ -88,8 +88,7 @@ async def play(ctx, url: str):
                 Queue.clear()
                 return
             main_location = os.path.dirname(os.path.realpath(__file__))
-            song_path = os.path.abspath(
-                os.path.realpath("Queue") + "\\" + first_file)
+            song_path = os.path.abspath(os.path.realpath("Queue") + "\\" + first_file)
             if length != 0:
                 print("Song Completed, Playing the next queued\n")
                 print(f"Songs still in Queue : {still_q}")
@@ -103,8 +102,9 @@ async def play(ctx, url: str):
 
                 time.sleep(1)
 
-                voice.play(discord.FFmpegPCMAudio("song.mp3"),
-                           after=lambda e: check_queue())
+                voice.play(
+                    discord.FFmpegPCMAudio("song.mp3"), after=lambda e: check_queue()
+                )
                 voice.source = discord.PCMVolumeTransformer(voice.source)
                 voice.source.volume = 0.1
 
@@ -140,15 +140,15 @@ async def play(ctx, url: str):
     voice = get(bot.voice_clients, guild=ctx.guild)
 
     ydl_opts = {
-        "format":
-        "bestaudio/best",
-        "quite":
-        True,
-        "postprocessors": [{
-            "key": "FFmpegExtractAudio",
-            "preferredcodec": "mp3",
-            "preferredquality": "192",
-        }],
+        "format": "bestaudio/best",
+        "quite": True,
+        "postprocessors": [
+            {
+                "key": "FFmpegExtractAudio",
+                "preferredcodec": "mp3",
+                "preferredquality": "192",
+            }
+        ],
     }
 
     try:
@@ -168,8 +168,7 @@ async def play(ctx, url: str):
             print(f"Renamed File: {file}\n")
             os.rename(file, "song.mp3")
 
-    voice.play(discord.FFmpegPCMAudio("song.mp3"),
-               after=lambda e: check_queue())
+    voice.play(discord.FFmpegPCMAudio("song.mp3"), after=lambda e: check_queue())
     voice.source = discord.PCMVolumeTransformer(voice.source)
     voice.source.volume = 0.1
 
@@ -232,21 +231,19 @@ async def add(ctx, url):
             add_queue = False
             Queue[q_num] = q_num
 
-    queue_path = os.path.abspath(
-        os.path.realpath("Queue" + f"\song{q_num}.%(ext)s"))
+    queue_path = os.path.abspath(os.path.realpath("Queue" + f"\song{q_num}.%(ext)s"))
 
     ydl_opts = {
-        "format":
-        "bestaudio/best",
-        "quite":
-        True,
-        "outtmpl":
-        queue_path,
-        "postprocessors": [{
-            "key": "FFmpegExtractAudio",
-            "preferredcodec": "mp3",
-            "preferredquality": "192",
-        }],
+        "format": "bestaudio/best",
+        "quite": True,
+        "outtmpl": queue_path,
+        "postprocessors": [
+            {
+                "key": "FFmpegExtractAudio",
+                "preferredcodec": "mp3",
+                "preferredquality": "192",
+            }
+        ],
     }
     await ctx.send("Getting the Song ready now ")
 
@@ -288,8 +285,7 @@ async def skip(ctx):
                 Queue.clear()
                 return
             main_location = os.path.dirname(os.path.realpath(__file__))
-            song_path = os.path.abspath(
-                os.path.realpath("Queue") + "\\" + first_file)
+            song_path = os.path.abspath(os.path.realpath("Queue") + "\\" + first_file)
             if length != 0:
                 print("Song Skipped, Playing the next queued\n")
                 print(f"Songs still in Queue : {still_q}")
@@ -303,8 +299,9 @@ async def skip(ctx):
 
                 time.sleep(1)
 
-                voice.play(discord.FFmpegPCMAudio("song.mp3"),
-                           after=lambda e: check_queue())
+                voice.play(
+                    discord.FFmpegPCMAudio("song.mp3"), after=lambda e: check_queue()
+                )
                 voice.source = discord.PCMVolumeTransformer(voice.source)
                 voice.source.volume = 0.1
 
@@ -335,11 +332,11 @@ async def dank(ctx):
     embed = discord.Embed(title="From r/Dankmemes")
 
     async with aiohttp.ClientSession() as cs:
-        async with cs.get(
-                "https://www.reddit.com/r/dankmemes/new.json?sort=hot") as r:
+        async with cs.get("https://www.reddit.com/r/dankmemes/new.json?sort=hot") as r:
             res = await r.json()
-            embed.set_image(url=res["data"]["children"][random.randint(0, 25)]
-                            ["data"]["url"])
+            embed.set_image(
+                url=res["data"]["children"][random.randint(0, 25)]["data"]["url"]
+            )
             await ctx.send(embed=embed)
 
 
@@ -351,11 +348,11 @@ async def meme(ctx):
     embed = discord.Embed(title="From r/memes")
 
     async with aiohttp.ClientSession() as cs:
-        async with cs.get(
-                "https://www.reddit.com/r/memes/new.json?sort=hot") as r:
+        async with cs.get("https://www.reddit.com/r/memes/new.json?sort=hot") as r:
             res = await r.json()
-            embed.set_image(url=res["data"]["children"][random.randint(0, 25)]
-                            ["data"]["url"])
+            embed.set_image(
+                url=res["data"]["children"][random.randint(0, 25)]["data"]["url"]
+            )
             await ctx.send(embed=embed)
 
 
@@ -383,33 +380,19 @@ async def help(ctx):
         value="Makes the Bot Join the Voice Channel You are in.",
         inline=True,
     )
-    embed.add_field(name="leave",
-                    value="Gives the Latency of the Bot",
-                    inline=True)
-    embed.add_field(name="ping",
-                    value="Gives the Latency of the Bot",
-                    inline=True)
-    embed.add_field(name="play",
-                    value="The makes the bot play the song",
-                    inline=True)
-    embed.add_field(name="pause",
-                    value="Pauses the current song being played",
-                    inline=True)
-    embed.add_field(name="resume",
-                    value="Resumes if the song is paused",
-                    inline=True)
-    embed.add_field(name="add",
-                    value="Adds a new song to the Queue",
-                    inline=True)
-    embed.add_field(name="next",
-                    value="Skips the current song being played",
-                    inline=True)
-    embed.add_field(name="meme",
-                    value="Posts a meme from r/memes",
-                    inline=True)
-    embed.add_field(name="dank",
-                    value="Posts a meme from r/Dankmemes",
-                    inline=True)
+    embed.add_field(name="leave", value="Gives the Latency of the Bot", inline=True)
+    embed.add_field(name="ping", value="Gives the Latency of the Bot", inline=True)
+    embed.add_field(name="play", value="The makes the bot play the song", inline=True)
+    embed.add_field(
+        name="pause", value="Pauses the current song being played", inline=True
+    )
+    embed.add_field(name="resume", value="Resumes if the song is paused", inline=True)
+    embed.add_field(name="add", value="Adds a new song to the Queue", inline=True)
+    embed.add_field(
+        name="next", value="Skips the current song being played", inline=True
+    )
+    embed.add_field(name="meme", value="Posts a meme from r/memes", inline=True)
+    embed.add_field(name="dank", value="Posts a meme from r/Dankmemes", inline=True)
 
     embed.set_footer(text="Made with LOVE")
 
