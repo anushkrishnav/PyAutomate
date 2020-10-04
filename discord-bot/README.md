@@ -1,4 +1,5 @@
 # Discord-Github PR, Issue notifier
+![](SongBird.png)
 
 This bot allows to send a message to selected discord text channel about new PR
 or Issue on github repo.
