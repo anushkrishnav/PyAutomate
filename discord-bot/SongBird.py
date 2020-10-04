@@ -368,8 +368,7 @@ async def help(ctx):
     embed = discord.Embed(
         colour=discord.Colour.red(),
         title="--SongBird--",
-        description=
-        "Bot Prefix is - (dash)\n This is a Simple Discord Bot to send Memes & Play Songs\n ",
+        description="Bot Prefix is - (dash)\n This is a Simple Discord Bot to send Memes & Play Songs\n ",
     )
 
     embed.set_author(
@@ -377,8 +376,7 @@ async def help(ctx):
         icon_url="https://avatarfiles.alphacoders.com/172/172111.png",
     )
     embed.set_image(
-        url=
-        "https://initiate.alphacoders.com/images/745/cropped-250-250-745065.png?5477"
+        url="https://initiate.alphacoders.com/images/745/cropped-250-250-745065.png?5477"
     )
     embed.add_field(
         name="join",
