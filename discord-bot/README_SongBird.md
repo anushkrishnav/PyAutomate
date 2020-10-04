@@ -21,5 +21,4 @@ It is just a Python file made with Discord.py library and uses the bot token to 
 
 ## How it looks like?
 
-Like this:
-![BotIssuePRImage](bot.jpg)
+![img](https://github.com/Xx-Ashutosh-xX/PyAutomate/blob/master/discord-bot/SongBird.png)
