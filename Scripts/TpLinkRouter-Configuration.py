@@ -10,7 +10,6 @@ from selenium.webdriver.chrome.options import Options
 # 2. Download ChromeDriver : https://chromedriver.chromium.org/downloads
 # 3. Install Selenium : pip install selenium
 
-
 # Add ISP Credential here
 username = "ISP Username"
 ispPassword = "564365456"
@@ -85,7 +84,8 @@ def Configuration():
 choice = input("1. Config\n2. Check\n==>")
 chromeOption = Options()
 chromeOption.headless = True
-driver = webdriver.Chrome(executable_path="C:\chromedriver.exe", options=chromeOption)
+driver = webdriver.Chrome(executable_path="C:\chromedriver.exe",
+                          options=chromeOption)
 Login()
 if choice == "1":
     Configuration()
