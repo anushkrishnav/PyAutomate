@@ -2,6 +2,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.chrome.options import Options
+
 # It automate the task of Configuring the new or reseted router
 # Prerequisite
 # 1. Download Python : https://www.python.org/downloads/
@@ -70,7 +71,7 @@ def Configuration():
     # print(bcolors.OKBLUE + '[', end='' + bcolors.ENDC + bcolors.OKGREEN)
     print("[", end="")
     while sec < 10:
-        print('-', end="")
+        print("-", end="")
         time.sleep(0.6)
         sec += 1
         # print(bcolors.ENDC + bcolors.OKBLUE + ']' + bcolors.ENDC + bcolors.OKGREEN + ' ✓ \n Configuration Successful' )
@@ -83,14 +84,13 @@ def Configuration():
 choice = input("1. Config\n2. Check\n==>")
 chromeOption = Options()
 chromeOption.headless = True
-driver = webdriver.Chrome(executable_path="C:\chromedriver.exe",
-                          options=chromeOption)
+driver = webdriver.Chrome(executable_path="C:\chromedriver.exe", options=chromeOption)
 Login()
 if choice == "1":
     Configuration()
-elif choice == '2':
+elif choice == "2":
     Troubleshoot()
 else:
-    print('Incorrect Option')
+    print("Incorrect Option")
 
 driver.quit()
